@@ -4,7 +4,7 @@ Guía de desarrollo incremental. Regla de oro: No avances a la siguiente feature
 
 📊 Resumen de Progreso
 
-[ ] Bloque 1: El Motor Local (Canvas 2D)
+[x] Bloque 1: El Motor Local (Canvas 2D)
 
 [ ] Bloque 2: Conexión y Presencia (WebSockets & Cursores)
 
@@ -40,13 +40,13 @@ Criterio de éxito: Poder dibujar múltiples líneas independientes en pantalla 
 
 Feature 1.3: Herramientas Básicas (Color, Grosor y Deshacer)
 
-[ ] Crear una barra de herramientas flotante (UI) con selector de color y grosor de trazo.
+[x] Crear una barra de herramientas flotante (UI) con selector de color y grosor de trazo.
 
-[ ] Asociar el color y grosor activos a cada nuevo objeto Stroke al iniciar el trazo.
+[x] Asociar el color y grosor activos a cada nuevo objeto Stroke al iniciar el trazo.
 
-[ ] Implementar la acción Deshacer (Ctrl+Z / botón) eliminando el último elemento del array y redibujando.
+[x] Implementar la acción Deshacer (Ctrl+Z / botón) eliminando el último elemento del array y redibujando.
 
-[ ] Implementar la acción Limpiar Lienzo.
+[x] Implementar la acción Limpiar Lienzo.
 
 Criterio de éxito: Alternar colores y grosores en distintos trazos y deshacer el último sin afectar a los anteriores.
 
@@ -56,11 +56,11 @@ Objetivo: Levantar el servidor Node y lograr que múltiples pestañas compartan 
 
 Feature 2.1: Servidor WebSocket y Salas (Rooms)
 
-[ ] Inicializar proyecto Node.js con TypeScript y Socket.io.
+[x] Inicializar proyecto Node.js con y Socket.io.
 
-[ ] Implementar soporte de salas dinámicas mediante URL en el cliente (ej. /room/:roomId).
+[x] Implementar soporte de salas dinámicas mediante URL en el cliente (ej. /room/:roomId).
 
-[ ] Gestionar eventos connection, join-room (socket.join(roomId)) y disconnect.
+[x] Gestionar eventos connection, join-room (socket.join(roomId)) y disconnect.
 
 Criterio de éxito: Abrir dos pestañas en la misma URL y verificar en los logs del servidor que ambas comparten sala y se desconectan limpiamente.
 
@@ -88,11 +88,11 @@ Objetivo: Lograr que el estado del dibujo sea compartido y consistente entre tod
 
 Feature 3.1: Sincronización al Terminar el Trazo (v1)
 
-[ ] Generar un id único en el cliente para cada trazo (crypto.randomUUID()).
+[x] Generar un id único en el cliente para cada trazo (crypto.randomUUID()).
 
-[ ] Al soltar el ratón (onPointerUp), emitir el evento stroke:complete con el objeto Stroke completo.
+[x] Al soltar el ratón (onPointerUp), emitir el evento stroke:complete con el objeto Stroke completo.
 
-[ ] Escuchar el evento en los demás clientes, añadir el trazo al estado local y disparar el renderizado.
+[x] Escuchar el evento en los demás clientes, añadir el trazo al estado local y disparar el renderizado.
 
 Criterio de éxito: Dibujar un trazo en la ventana A y verlo aparecer en la ventana B al soltar el clic.
 
@@ -112,11 +112,11 @@ Criterio de éxito: Dos usuarios dibujando simultáneamente ven cómo se forman 
 
 Feature 3.3: Hidratación de Estado (Sync on Join)
 
-[ ] Almacenar en memoria en el servidor un mapa Map<roomId, Stroke[]> con el historial de cada sala.
+[x] Almacenar en memoria en el servidor un mapa Map<roomId, Stroke[]> con el historial de cada sala.
 
-[ ] Al unirse un nuevo cliente, emitirle un evento room:init con todos los trazos acumulados hasta ese momento.
+[x] Al unirse un nuevo cliente, emitirle un evento room:init con todos los trazos acumulados hasta ese momento.
 
-[ ] Sincronizar también el borrado/deshacer (stroke:delete) para que afecte a todos los clientes y al estado del servidor.
+[x] Sincronizar también el borrado/deshacer (stroke:delete) para que afecte a todos los clientes y al estado del servidor.
 
 Criterio de éxito: Dibujar en la Pestaña A, abrir una Pestaña B nueva y cargar automáticamente todo el dibujo previo.
 
